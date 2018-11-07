@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ex3</title>
+    <style>
+    body{font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif}
+    </style>
+</head>
+<body>
+    
+<h2 style="color:blue;">Inscription</h2>
+<fieldset>
+    <label>Veuillez remplir les champs </label>
+    <form action="ex5.php" method="POST">
+        Nom : <input type="text" name="nom"><br>
+        Prenom : <input type="text" name="prenom"><br>
+        Mot de passe : <input type="password" name="pass1"><br>
+        Confirmez votre mot de passe : <input type="password" name="pass2"><br>
+        Age: <input type="number" name="age" maxlength="2"><br>
+        Votre sexe: <input type="radio" name="sex" value="Homme" checked>Homme <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="sex" value="Femme">Femme <br>
+       
+         <br><br><button type="submit" name="envoyer">Envoyer</button> <input type="reset" value="Annuler">
+    </form>
+</fieldset>
+</body>
+</html>
