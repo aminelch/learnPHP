@@ -1,11 +1,11 @@
 <?php 
-include_once("modele.php");
+include("modele.php");
 class Location extends Modele
 {
     private $idLocat, $idClient,$idVoiture,$nbrJour,$dateLoc;
     
-    function __construct($idLocat="", $idClient="",$idVoiture="",$nbrJour=0,$dateLoc=null) {
-    $this->idLocat=$idLocat;
+    function __construct($a="", $idClient="",$idVoiture="",$nbrJour=0,$dateLoc=null) {
+    $this->idLocat=$a;
     $this->idClient=$idClient;
     $this->idVoiture=$idVoiture;
     $this->nbrJour=$nbrJour;
@@ -23,14 +23,14 @@ class Location extends Modele
 
         function delete($idLocat) {
             $query = "delete from Location where idLocat=?";
-            $res=$this->pdo->prepare($query);
+            $res=$this->pdo->prepare("delete from Location where idLocat=?");
             return $res->execute(array($idLocat));
         }
 
 
         function liste(){
             $res=$this->pdo->query('SELECT * FROM Location');
-            $posts=$res->fetchAll();
+            $posts=$res->fetchAll(PDO::FETCH_OBJ);
             return $posts;
     
         }

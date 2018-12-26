@@ -1,5 +1,5 @@
 <?php
-abstract class Modele {
+abstract class APPModele {
     const host="localhost";
     protected $pdo;
     const user="aminelch";   
@@ -7,10 +7,10 @@ abstract class Modele {
     const bd="agence";
 
     function __construct(){
-        $this->pdo=new PDO("mysql:host=".self::host.";dbname=fdfdf".self::bd,"ggg", self::login);
+        $this->pdo=new PDO("mysql:host=".self::host.";dbname=".self::bd,self::user, self::login);
     }
 
-    function connect(){
+    function __destruct(){
         $this->pdo=null;
     
     }
